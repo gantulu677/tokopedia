@@ -1,0 +1,447 @@
+
+{
+  "version": "2.4.1",
+  "metadata": {
+    "name": "App.json",
+    "description": "Application configuration, design system, component hierarchy, page registry, layouts, routes, overlays, and validation rules.",
+    "status": "final",
+    "platform": "mobile-first"
+  },
+  "application": {
+    "name": "App",
+    "designLanguage": "Tokopedia Inspired",
+    "platform": "Mobile First",
+    "designSystem": "Tokopedia Mobile Design System"
+  },
+  "designSystem": {
+    "name": "Tokopedia Mobile Design System",
+    "version": "1.0.0",
+    "mode": "mobile-first",
+    "tokens": {
+      "colors": {
+        "brand": {
+          "primary": "#03AC0E",
+          "primaryDark": "#038C0B",
+          "primaryLight": "#E8F8E9",
+          "secondary": "#00AA5B"
+        },
+        "background": {
+          "default": "#FFFFFF",
+          "subtle": "#F5F5F5",
+          "muted": "#F0F0F0"
+        },
+        "surface": {
+          "default": "#FFFFFF",
+          "raised": "#FFFFFF",
+          "disabled": "#F5F5F5"
+        },
+        "text": {
+          "primary": "#212121",
+          "secondary": "#6D7588",
+          "muted": "#9E9E9E",
+          "inverse": "#FFFFFF",
+          "disabled": "#BDBDBD"
+        },
+        "border": {
+          "default": "#E0E0E0",
+          "subtle": "#EEEEEE",
+          "strong": "#BDBDBD"
+        },
+        "status": {
+          "success": "#03AC0E",
+          "warning": "#F0A000",
+          "error": "#E53935",
+          "info": "#2196F3"
+        }
+      },
+      "typography": {
+        "fontFamily": "Inter",
+        "fontWeights": {
+          "regular": 400,
+          "medium": 500,
+          "semibold": 600,
+          "bold": 700
+        },
+        "fontSizes": {
+          "xs": 12,
+          "sm": 14,
+          "md": 16,
+          "lg": 18,
+          "xl": 20,
+          "2xl": 24,
+          "3xl": 28,
+          "4xl": 32
+        },
+        "lineHeights": {
+          "tight": 1.2,
+          "normal": 1.5,
+          "relaxed": 1.75
+        }
+      },
+      "spacing": {
+        "0": 0,
+        "1": 4,
+        "2": 8,
+        "3": 12,
+        "4": 16,
+        "5": 20,
+        "6": 24,
+        "8": 32,
+        "10": 40,
+        "12": 48,
+        "16": 64
+      },
+      "sizing": {
+        "icon": {
+          "sm": 16,
+          "md": 20,
+          "lg": 24
+        },
+        "buttonHeight": 44,
+        "inputHeight": 48,
+        "headerHeight": 56,
+        "bottomNavHeight": 64,
+        "minTouchTarget": 44
+      },
+      "radius": {
+        "none": 0,
+        "xs": 4,
+        "sm": 8,
+        "md": 12,
+        "lg": 16,
+        "xl": 20,
+        "full": 999
+      },
+      "shadows": {
+        "sm": "0 1px 2px rgba(0, 0, 0, 0.08)",
+        "md": "0 2px 8px rgba(0, 0, 0, 0.10)",
+        "lg": "0 4px 16px rgba(0, 0, 0, 0.12)"
+      }
+    },
+    "responsive": {
+      "breakpoints": {
+        "mobile": {
+          "min": 0,
+          "max": 767
+        },
+        "tablet": {
+          "min": 768,
+          "max": 1023
+        },
+        "desktop": {
+          "min": 1024
+        }
+      },
+      "container": {
+        "mobile": {
+          "width": "100%",
+          "padding": 16
+        },
+        "tablet": {
+          "maxWidth": 960,
+          "padding": 24
+        },
+        "desktop": {
+          "maxWidth": 1200,
+          "padding": 32
+        }
+      }
+    },
+    "components": {
+      "buttons": {
+        "variants": [
+          "primary",
+          "secondary",
+          "outline",
+          "text",
+          "danger"
+        ],
+        "defaultHeight": 44,
+        "minTouchTarget": 44
+      },
+      "inputs": {
+        "defaultHeight": 48,
+        "borderRadius": 8
+      },
+      "cards": {
+        "borderRadius": 12,
+        "padding": 16
+      },
+      "navigation": {
+        "headerHeight": 56,
+        "bottomNavHeight": 64
+      },
+      "product": {
+        "imageAspectRatio": "1:1",
+        "cardRadius": 12
+      },
+      "badges": {
+        "borderRadius": 999
+      },
+      "feedback": {
+        "variants": [
+          "success",
+          "warning",
+          "error",
+          "info"
+        ]
+      }
+    },
+    "accessibility": {
+      "minimumTouchTarget": 44,
+      "keyboardNavigation": true,
+      "visibleFocus": true,
+      "semanticColors": true,
+      "reducedMotion": true
+    }
+  },
+  "rootLayout": {
+    "display": "flex",
+    "flexDirection": "column",
+    "height": "100%",
+    "width": "100%",
+    "maxWidth": "500px",
+    "margin": "0 auto",
+    "overflow": "hidden"
+  },
+  "componentTree": {
+    "root": {
+      "component": "App",
+      "children": [
+        {
+          "component": "DesignSystem"
+        },
+        {
+          "component": "AppShell",
+          "children": [
+            {
+              "component": "Header"
+            },
+            {
+              "component": "Main"
+            },
+            {
+              "component": "BottomNav"
+            }
+          ]
+        },
+        {
+          "component": "StandalonePages",
+          "children": [
+            {
+              "component": "StandaloneMain"
+            }
+          ]
+        },
+        {
+          "component": "Overlay",
+          "children": [
+            {
+              "component": "Modal"
+            },
+            {
+              "component": "Drawer"
+            },
+            {
+              "component": "Dialog"
+            },
+            {
+              "component": "Toast"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "pageRegistry": {
+    "ProductDetailPage": {
+      "type": "main",
+      "layoutId": "AppShell",
+      "description": "Product detail page resolved using the product slug."
+    },
+    "CheckoutPage": {
+      "type": "standalone",
+      "layoutId": "StandalonePages",
+      "description": "Standalone checkout page."
+    },
+    "AdminPage": {
+      "type": "standalone",
+      "layoutId": "StandalonePages",
+      "description": "Standalone administration page."
+    },
+    "NotFoundPage": {
+      "type": "shared",
+      "layoutId": "StandalonePages",
+      "description": "Shared 404 page for unmatched or invalid routes and resources."
+    }
+  },
+  "layouts": {
+    "rootLayout": {
+      "display": "flex",
+      "flexDirection": "column",
+      "height": "100%",
+      "width": "100%",
+      "maxWidth": "500px",
+      "margin": "0 auto",
+      "overflow": "hidden"
+    },
+    "AppShell": {
+      "parentLayout": "rootLayout",
+      "display": "flex",
+      "flexDirection": "column",
+      "flex": 1,
+      "minHeight": 0,
+      "regions": {
+        "Header": {
+          "component": "Header",
+          "flexShrink": 0
+        },
+        "Main": {
+          "component": "Main",
+          "flex": 1,
+          "minHeight": 0,
+          "overflowY": "auto"
+        },
+        "BottomNav": {
+          "component": "BottomNav",
+          "flexShrink": 0
+        }
+      }
+    },
+    "StandalonePages": {
+      "parentLayout": "rootLayout",
+      "display": "flex",
+      "flexDirection": "column",
+      "flex": 1,
+      "minHeight": 0,
+      "regions": {
+        "StandaloneMain": {
+          "component": "StandaloneMain",
+          "flex": 1,
+          "minHeight": 0,
+          "overflowY": "auto"
+        }
+      }
+    }
+  },
+  "routes": [
+    {
+      "routeId": "checkout",
+      "path": "/checkout",
+      "pageId": "CheckoutPage",
+      "layoutId": "StandalonePages",
+      "priority": 100,
+      "type": "static"
+    },
+    {
+      "routeId": "admin",
+      "path": "/admin",
+      "pageId": "AdminPage",
+      "layoutId": "StandalonePages",
+      "priority": 100,
+      "type": "static"
+    },
+    {
+      "routeId": "product-detail",
+      "path": "/:slug",
+      "pageId": "ProductDetailPage",
+      "layoutId": "AppShell",
+      "priority": 10,
+      "type": "dynamic",
+      "params": [
+        "slug"
+      ],
+      "resolve": {
+        "parameter": "slug",
+        "required": true,
+        "validate": true,
+        "resource": "product",
+        "onMissing": "NotFoundPage",
+        "onInvalid": "NotFoundPage",
+        "onNotFound": "NotFoundPage"
+      }
+    }
+  ],
+  "fallback": {
+    "routeId": "not-found",
+    "path": "*",
+    "pageId": "NotFoundPage",
+    "layoutId": "StandalonePages",
+    "statusCode": 404
+  },
+  "overlays": {
+    "scope": "global",
+    "enabled": true,
+    "components": [
+      {
+        "component": "Modal",
+        "enabled": true
+      },
+      {
+        "component": "Drawer",
+        "enabled": true
+      },
+      {
+        "component": "Dialog",
+        "enabled": true
+      },
+      {
+        "component": "Toast",
+        "enabled": true
+      }
+    ]
+  },
+  "validation": {
+    "pageRegistry": {
+      "uniquePageIds": true,
+      "requiredType": true,
+      "allowedTypes": [
+        "main",
+        "standalone",
+        "shared"
+      ]
+    },
+    "routes": {
+      "expectedPrimaryRouteCount": 3,
+      "uniqueRouteIds": true,
+      "uniquePaths": true,
+      "validatePageReferences": true,
+      "validateLayoutReferences": true,
+      "staticRoutesBeforeDynamic": true,
+      "productDetail": {
+        "requireSlug": true,
+        "rejectEmptySlug": true,
+        "validateSlug": true,
+        "rejectUnknownSlug": true,
+        "showNotFoundOnFailure": true
+      }
+    },
+    "fallback": {
+      "required": true,
+      "requireNotFoundPage": true,
+      "statusCode": 404
+    },
+    "layouts": {
+      "validateParentLayout": true,
+      "validateRegionComponents": true,
+      "requireFlexColumn": true,
+      "requireMinHeightZeroForScrollableRegions": true,
+      "onlyContentRegionScrollable": true
+    },
+    "rootLayout": {
+      "requireFullHeight": true,
+      "requireFullWidth": true,
+      "maxWidth": 500,
+      "requireFlexColumn": true,
+      "requireOverflowHidden": true
+    },
+    "designSystem": {
+      "validateColorTokens": true,
+      "validateTypographyTokens": true,
+      "validateSpacingTokens": true,
+      "validateSizingTokens": true,
+      "validateResponsiveTokens": true,
+      "validateAccessibility": true
+    }
+  }
+}
